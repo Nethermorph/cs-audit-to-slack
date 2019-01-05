@@ -16,21 +16,21 @@ function sendFeedback() {
       switch (range[i][13]) {
         case "Email":
           // send email to agent by calling sendEmail function
-          if(confirm=='ok'){
+          if (confirm=='ok'){
             sendEmail(range[i])
         }
           break;
         
         case "Slack":
           // post message to slack
-          if(confirm=='ok'){
+          if (confirm=='ok'){
             sendToSlack(range[i])
         }
           break;
           
         case "Both":
           // send email and post to slack
-          if(confirm=='ok'){
+          if (confirm=='ok'){
             sendEmail(range[i]);
             sendToSlack(range[i]);
         }
