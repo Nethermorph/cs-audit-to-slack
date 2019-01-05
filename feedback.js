@@ -15,20 +15,26 @@ function sendFeedback() {
       // choose email, slack or both channels
       switch (range[i][13]) {
         case "Email":
-          // send email to agent 
-          sendEmail(range[i]);
+          // send email to agent by calling sendEmail function
+          if(confirm=='ok'){
+            sendEmail(range[i])
+        }
           break;
         
         case "Slack":
           // post message to slack
-          sendToSlack(range[i]);
+          if(confirm=='ok'){
+            sendToSlack(range[i])
+        }
           break;
           
         case "Both":
-          // send email and post to Slack
-          sendEmail(range[i]);
-          sendToSlack(range[i]);
-          break;
+          // send email and post to slack
+          if(confirm=='ok'){
+            sendEmail(range[i]);
+            sendToSlack(range[i]);
+        }
+          break;            
       }
       
       // add timestamp to final column 
